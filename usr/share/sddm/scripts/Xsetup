@@ -1,0 +1,30 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+
+# if in livecd change default login
+if [ -e "/lib/live/mount/medium" ]; then
+    sed -i 's|Session=.*|Session=livecd|g' /etc/sddm.conf
+fi
+
+
+
+if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
+    /usr/local/bin/autorandr common
+fi
+
+
+if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
+    sed -i 's|Name=.*|Name=Leve (LXQt)|g' /usr/share/xsessions/lxqt.desktop
+    sed -i 's|Name=.*|Name=Clássico (KDE Plasma)|g' /usr/share/xsessions/plasma.desktop
+    sed -i 's|Name=.*|Name=Moderno (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
+    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Selecione o desktop: %1"|' /usr/share/sddm/themes/breeze/SessionButton.qml
+else
+    sed -i 's|Name=.*|Name=Lightweight (LXQt)|g' /usr/share/xsessions/lxqt.desktop
+    sed -i 's|Name=.*|Name=Classic (KDE Plasma)|g' /usr/share/xsessions/plasma.desktop
+    sed -i 's|Name=.*|Name=New (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
+    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/breeze/SessionButton.qml
+fi
+
+
+

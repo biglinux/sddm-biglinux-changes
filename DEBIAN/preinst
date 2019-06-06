@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+package_name=sddm-biglinux-changes
+mkdir -p "/usr/share/dpkgdivert/sddm-biglinux-changes"
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmscriptsXsetup" --rename "/usr/share/sddm/scripts/Xsetup"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeSessionButton.qml" --rename "/usr/share/sddm/themes/breeze/SessionButton.qml"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/usr/share/sddm/scripts/Xsetup")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmscriptsXsetup" --rename "/usr/share/sddm/scripts/Xsetup"
+fi
+if [ "$(dpkg-divert --list "/usr/share/sddm/themes/breeze/SessionButton.qml")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeSessionButton.qml" --rename "/usr/share/sddm/themes/breeze/SessionButton.qml"
+fi
+;;
+esac
+exit 0

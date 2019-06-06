@@ -1,0 +1,8 @@
+d809b13d7b90d465e57f3d4e28b494ce  DEBIAN/dpkg-divert
+d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+61afd197e0378287084cf7d660a45ce7  DEBIAN/preinst
+667141a8ee69e2413d9d38792ea207a3  DEBIAN/postrm
+b127b37e084ec03e69d0b7865c6056fe  DEBIAN/control
+b05bd69af09ebd9767be094ee8bcb78f  usr/local/bin/autorandr
+e8eb21f3850f5ca11d1af6f3ab57421f  usr/share/sddm/scripts/Xsetup
+e83ba8007f623826c0f4bb3c693a73be  usr/share/sddm/themes/breeze/SessionButton.qml

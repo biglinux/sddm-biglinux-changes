@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+package_name=sddm-biglinux-changes
+case "$1" in
+  remove)
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/scripts/Xsetup"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/SessionButton.qml"
+    ;;
+  purge)
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/scripts/Xsetup"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/SessionButton.qml"
+;;
+esac
+exit 0
