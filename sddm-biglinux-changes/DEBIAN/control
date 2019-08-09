@@ -5,6 +5,6 @@ Architecture: all
 Maintainer: Bruno Goncalves <bigbruno@gmail.com>
 Section: admin
 Priority: optional
-Installed-Size:344
+Installed-Size:88
 Description: Used autorandr from https://github.com/phillipberndt/autorandr to run in sddm, to fix problem with multi monitor, and change another things to make more friendly
 
