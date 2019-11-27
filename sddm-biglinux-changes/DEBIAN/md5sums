@@ -2,8 +2,9 @@ d809b13d7b90d465e57f3d4e28b494ce  DEBIAN/dpkg-divert
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 61afd197e0378287084cf7d660a45ce7  DEBIAN/preinst
 667141a8ee69e2413d9d38792ea207a3  DEBIAN/postrm
-f8c93a0905f7d155c3cd1a4b98fec5ec  DEBIAN/control
+517ebf03ef8b7186d211155fbc374ad9  DEBIAN/control
 b05bd69af09ebd9767be094ee8bcb78f  usr/local/bin/autorandr
-ec83c12dd2bb08884fe91e47c50a3bdc  usr/share/sddm/scripts/Xsetup
+0ad4bd13a39c7cc6359896b0d1153fad  usr/share/sddm/scripts/Xsetup
+1e49b9422a7c032dc3fb7ca4081910cf  usr/share/sddm/scripts/feh
 e83ba8007f623826c0f4bb3c693a73be  usr/share/sddm/themes/breeze/SessionButton.qml
 d21c6a644305b945a642d76fec33f7e1  usr/share/sddm/themes/breeze/components/clock.sh
