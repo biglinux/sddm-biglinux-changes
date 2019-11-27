@@ -27,4 +27,4 @@ else
 fi
 
 
-
+/usr/share/sddm/scripts/feh &

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+background="$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d=)"
+
+if [ -e "$background" ]; then
+    feh -Z "$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d=)" &
+else
+    feh -Z "$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d= | sed 's|^|/usr/share/wallpapers/|g'
+)" &
+fi
+
+sleep 2
+killall feh

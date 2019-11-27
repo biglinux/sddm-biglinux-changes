@@ -1,10 +1,10 @@
 Package: sddm-biglinux-changes
-Version: 1.0.0-1big1
-Depends: x11-xserver-utils, python
+Version: 1.0.0-1big3
+Depends: x11-xserver-utils, python, feh
 Architecture: all
 Maintainer: Bruno Goncalves <bigbruno@gmail.com>
 Section: admin
 Priority: optional
-Installed-Size:88
+Installed-Size:92
 Description: Used autorandr from https://github.com/phillipberndt/autorandr to run in sddm, to fix problem with multi monitor, and change another things to make more friendly
 
