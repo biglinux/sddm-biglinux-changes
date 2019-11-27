@@ -13,6 +13,8 @@ if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
     /usr/local/bin/autorandr common
 fi
 
+/usr/share/sddm/scripts/feh &
+
 
 if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
     sed -i 's|Name=.*|Name=Leve (LXQt)|g' /usr/share/xsessions/lxqt.desktop
@@ -26,5 +28,6 @@ else
     sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/breeze/SessionButton.qml
 fi
 
+#Uncomment to add quote in login screen
+#/usr/share/sddm/themes/breeze/components/clock.sh 
 
-/usr/share/sddm/scripts/feh &

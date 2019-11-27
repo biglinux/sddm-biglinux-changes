@@ -39,7 +39,16 @@ ColumnLayout {
     Label {
 EOF
 
-        echo "text: \"$(/usr/games/fortune biglinux-ptbr | sed "s|\"|'|g")\"" >> /usr/share/sddm/themes/breeze/components/Clock.qml
+
+if [ -e "/usr/share/games/fortunes/biglinux-ptbr" ]; then
+    echo "text: \"$(/usr/games/fortune biglinux-ptbr | sed "s|\"|'|g")\"" >> /usr/share/sddm/themes/breeze/components/Clock.qml
+else
+    echo 'text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)' >> /usr/share/sddm/themes/breeze/components/Clock.qml
+fi
+
+
+
+
 
 cat <<'EOF' >> /usr/share/sddm/themes/breeze/components/Clock.qml
         color: ColorScope.textColor

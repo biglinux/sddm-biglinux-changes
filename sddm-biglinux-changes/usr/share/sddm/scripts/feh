@@ -2,14 +2,32 @@
 
 
 
-
+#See background image in sddm configuration
 background="$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d=)"
 
-if [ -e "$background" ]; then
-    feh --bg-scale "$background" &
-else
-    feh --bg-scale "$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d= | sed 's|^|/usr/share/wallpapers/|g')" &
+if [ ! -e "$background" ]; then
+    background="$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d= | sed 's|^|/usr/share/wallpapers/|g')"
 fi
 
+#If not found user background selection, use default
+if [ ! -e "$background" ]; then
+    background="/usr/share/wallpapers/BigLinux01.jpg"
+fi
+
+#Detect language of quote
+if [ "$(grep "locale=pt" /proc/cmdline)" != "" ]
+then
+    quote="$(/usr/games/fortune biglinux-ptbr | sed "s|\"|¨|g;s|'|¨|g")"
+else
+    quote="$(/usr/games/fortune | sed "s|\"|¨|g;s|'|¨|g")"
+fi
+
+#Make a new image with quote
+convert "$background" -gravity Center -stroke black -strokewidth 1 -fill black -pointsize 50 -font Ubuntu -annotate 0 "$quote" -fill white -annotate +3-2 "$quote" /tmp/bootbg.jpg
+
+#Show image in screen
+feh --bg-scale "/tmp/bootbg.jpg" &
+
+#kill image app to not use more resources
 sleep 2
 killall feh
