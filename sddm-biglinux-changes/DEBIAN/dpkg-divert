@@ -1,2 +1,3 @@
 /usr/share/sddm/scripts/Xsetup
 /usr/share/sddm/themes/breeze/SessionButton.qml
+/usr/lib/systemd/system/sddm.service
