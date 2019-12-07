@@ -1,5 +1,5 @@
 Package: sddm-biglinux-changes
-Version: 1.0.0-1big4
+Version: 1.0.0-1big5
 Depends: x11-xserver-utils, python, feh
 Architecture: all
 Maintainer: Bruno Goncalves <bigbruno@gmail.com>
