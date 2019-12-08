@@ -1,0 +1,3 @@
+#!/bin/sh
+
+QT_QUICK_BACKEND=software QSG_RENDER_LOOP=basic exec /usr/bin/sddm
