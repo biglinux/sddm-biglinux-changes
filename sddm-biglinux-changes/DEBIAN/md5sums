@@ -2,10 +2,11 @@
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 b4aa6e6fd4efbb2427a5e45c8a8981cb  DEBIAN/postrm
 c78c65c3d6ef4488d94e866ce19fe46e  DEBIAN/preinst
-311941d219dcadbc0eb193c28c215b59  DEBIAN/control
+4012ec8c9ec05ee1e35777669ef1044f  DEBIAN/control
 b05bd69af09ebd9767be094ee8bcb78f  usr/local/bin/autorandr
 cdb0a21be290e6e0c15e47bb5ffaa569  usr/share/sddm/scripts/Xsetup
-4b61488c6d53412fdbecbdca1780833a  usr/share/sddm/scripts/feh
+fe7e4c496eca4a918c09a858473ae5d8  usr/share/sddm/scripts/feh
 e83ba8007f623826c0f4bb3c693a73be  usr/share/sddm/themes/breeze/SessionButton.qml
-0d7d4b90245f0cc5d2e5bda23904032f  usr/share/sddm/themes/breeze/components/clock.sh
-2b83330dd480d704c6ce916739c8fc18  usr/lib/systemd/system/sddm.service
+45bdffbfaf793d392b513baf832a7b87  usr/share/games/fortunes/biglinux-ptbr
+2abbbdd1f5d202311458b2278b79490e  usr/share/games/fortunes/biglinux-ptbr.dat
+5a01e9a2fc5bcee6414b1be1d53013d7  usr/lib/systemd/system/sddm.service

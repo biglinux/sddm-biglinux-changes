@@ -3,8 +3,9 @@ Description=Simple Desktop Display Manager
 Documentation=man:sddm(1) man:sddm.conf(5)
 # Change this if you want to start sddm in a different tty
 Conflicts=getty@tty1.service
-After=haveged.service gpu-manager.service systemd-logind.service
-Before=ModemManager.service udisks2.service cups.service systemd-logind.service ondemand.service wpa_supplicant.service accounts-daemon.service e2scrub_reap.service grub-common.service systemd-resolved.service zram-config.service upower.service rsyslog.service NetworkManager.service grub-initrd-fallback.service irqbalance.service snapd.service 
+After=systemd-user-sessions.service plymouth-start.service plymouth-quit-wait.service plymouth-quit.service systemd-logind.service
+OnFailure=plymouth-quit.service
+Before=ModemManager.service cups.service zram-config.service
 
 
 
@@ -26,12 +27,9 @@ OnFailure=plymouth-quit.service
 # display-manager.service symlink handling
 ExecStartPre=/bin/sh -c '[ "$(cat /etc/X11/default-display-manager 2>/dev/null)" = "/usr/bin/sddm" ]'
 ExecStart=/usr/bin/sddm
-CPUSchedulingPolicy=rr
-CPUSchedulingPriority=70
+Nice=-15
 IOSchedulingClass=1
 IOSchedulingPriority=0
-LimitRTPRIO=71
-LimitRTTIME=infinity
 Restart=always
 RestartSec=1s
 EnvironmentFile=-/etc/default/locale

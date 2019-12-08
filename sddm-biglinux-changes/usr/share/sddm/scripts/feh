@@ -17,10 +17,14 @@ fi
 #Detect language of quote
 if [ "$(grep "locale=pt" /proc/cmdline)" != "" ]
 then
-    quote="$(/usr/games/fortune biglinux-ptbr | sed "s|\"|¨|g;s|'|¨|g")"
+    echo "$(/usr/games/fortune biglinux-ptbr | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
 else
-    quote="$(/usr/games/fortune | sed "s|\"|¨|g;s|'|¨|g")"
+    echo "$(/usr/games/fortune | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
 fi
+
+/usr/share/sddm/scripts/clock.sh
+
+quote="$(cat /tmp/biglinux_quote)"
 
 #Make a new image with quote
 convert "$background" -gravity Center -stroke black -strokewidth 1 -fill black -pointsize 50 -font Ubuntu -annotate 0 "$quote" -fill white -annotate +3-2 "$quote" /tmp/bootbg.jpg
