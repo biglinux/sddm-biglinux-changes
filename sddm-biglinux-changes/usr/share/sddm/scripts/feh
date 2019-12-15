@@ -9,6 +9,10 @@ if [ ! -e "$background" ]; then
     background="$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d= | sed 's|^|/usr/share/wallpapers/|g')"
 fi
 
+if [ ! -e "$background" ]; then
+    background="$(grep background /usr/share/sddm/themes/breeze/theme.conf.user | cut -f2 -d= | sed 's|^|/usr/share/sddm/themes/breeze/|g')"
+fi
+
 #If not found user background selection, use default
 if [ ! -e "$background" ]; then
     background="/usr/share/wallpapers/BigLinux01.jpg"
