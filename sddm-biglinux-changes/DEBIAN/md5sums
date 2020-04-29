@@ -2,11 +2,11 @@
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 b4aa6e6fd4efbb2427a5e45c8a8981cb  DEBIAN/postrm
 c78c65c3d6ef4488d94e866ce19fe46e  DEBIAN/preinst
-ac70f5308db0cab489b00a3c631184b5  DEBIAN/control
+26f656127764fd169b65b1b24726d444  DEBIAN/control
 b05bd69af09ebd9767be094ee8bcb78f  usr/local/bin/autorandr
 cdb0a21be290e6e0c15e47bb5ffaa569  usr/share/sddm/scripts/Xsetup
 add1dc6576c5bb1ea27f29967e56c884  usr/share/sddm/scripts/clock.sh
-25d91e895e5431afd05d3a06c9253faa  usr/share/sddm/scripts/feh
+f5c0dff4adf969645e849ae08af097f9  usr/share/sddm/scripts/feh
 e83ba8007f623826c0f4bb3c693a73be  usr/share/sddm/themes/breeze/SessionButton.qml
 45bdffbfaf793d392b513baf832a7b87  usr/share/games/fortunes/biglinux-ptbr
 2abbbdd1f5d202311458b2278b79490e  usr/share/games/fortunes/biglinux-ptbr.dat
