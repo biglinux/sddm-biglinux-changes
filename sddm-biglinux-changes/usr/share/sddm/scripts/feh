@@ -7,6 +7,13 @@ if [ "$(xrandr --current | grep \* | grep 800x600)" != "" ] && [ "$(lspci | grep
 fi
 # Virtualization fix close
 
+# 4k to fullhd open
+if [ "$(xrandr --current | grep \* | grep 3840x2160)" != "" ] && [ ! -e "/usr/share/biglinux/4k_to_fhd" ]; then
+    xrandr -s 1920x1080
+    xrandr --dpi 96
+    touch /usr/share/biglinux/4k_to_fhd
+fi
+# 4k to fullhd close
 
 
 #See background image in sddm configuration
