@@ -17,11 +17,13 @@ fi
 
 
 if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
+    sed -i 's|Name=.*|Name=Central de Controle|g' /usr/share/xsessions/bigcontrolcenter.desktop
     sed -i 's|Name=.*|Name=Leve (LXQt)|g' /usr/share/xsessions/lxqt.desktop
     sed -i 's|Name=.*|Name=Clássico (KDE Plasma)|g' /usr/share/xsessions/plasma.desktop
     sed -i 's|Name=.*|Name=Moderno (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
     sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Selecione o desktop: %1"|' /usr/share/sddm/themes/breeze/SessionButton.qml
 else
+    sed -i 's|Name=.*|Name=Control Center|g' /usr/share/xsessions/bigcontrolcenter.desktop
     sed -i 's|Name=.*|Name=Lightweight (LXQt)|g' /usr/share/xsessions/lxqt.desktop
     sed -i 's|Name=.*|Name=Classic (KDE Plasma)|g' /usr/share/xsessions/plasma.desktop
     sed -i 's|Name=.*|Name=New (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
