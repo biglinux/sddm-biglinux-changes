@@ -1,10 +1,10 @@
 Package: sddm-biglinux-changes
-Version: 1.0.1-2big7
+Version: 1.0.1-2big8
 Depends: x11-xserver-utils, feh, fortunes-min
 Architecture: all
 Maintainer: Bruno Goncalves <bigbruno@gmail.com>
 Section: admin
 Priority: optional
-Installed-Size:116
+Installed-Size:128
 Description: Used autorandr from https://github.com/phillipberndt/autorandr to run in sddm, to fix problem with multi monitor, and change another things to make more friendly, and add curious message in boot
 
