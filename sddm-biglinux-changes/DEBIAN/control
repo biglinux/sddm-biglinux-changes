@@ -1,5 +1,5 @@
 Package: sddm-biglinux-changes
-Version: 1.0.1-2big4
+Version: 1.0.1-2big5
 Depends: x11-xserver-utils, feh, fortunes-min
 Architecture: all
 Maintainer: Bruno Goncalves <bigbruno@gmail.com>
