@@ -30,8 +30,15 @@ if [ "$(grep "locale=pt" /proc/cmdline)" != "" ]
 then
     echo "$(/usr/games/fortune biglinux-ptbr | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
 else
-    echo "$(/usr/games/fortune biglinux-en | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
+    if [ "$(grep "locale=es" /proc/cmdline)" != "" ]
+    then
+        echo "$(/usr/games/fortune biglinux-es | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
+    else
+        echo "$(/usr/games/fortune biglinux-en | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
+    fi
 fi
+
+
 
 /usr/share/sddm/scripts/clock.sh
 
