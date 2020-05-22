@@ -7,14 +7,15 @@ if [ -e "/lib/live/mount/medium" ]; then
     sed -i 's|Session=.*|Session=livecd|g' /etc/sddm.conf
 fi
 
-
-
 if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
     /usr/local/bin/autorandr common
 fi
 
-/usr/share/sddm/scripts/feh &
+if [ ! -e "/etc/disable_text_in_sddm" ]; then
+    /usr/share/sddm/scripts/feh &
+fi
 
+/usr/share/sddm/scripts/numlock
 
 if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
     sed -i 's|Name=.*|Name=Central de Controle|g' /usr/share/xsessions/bigcontrolcenter.desktop
