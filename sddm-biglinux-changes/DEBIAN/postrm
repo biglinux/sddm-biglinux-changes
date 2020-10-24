@@ -5,11 +5,15 @@ case "$1" in
   remove)
     dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/scripts/Xsetup"
     dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/SessionButton.qml"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/Main.qml"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/BreezeMenuStyle.qml"
     dpkg-divert --package "$package_name" --rename --remove "/usr/lib/systemd/system/sddm.service"
     ;;
   purge)
     dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/scripts/Xsetup"
     dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/SessionButton.qml"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/Main.qml"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/sddm/themes/breeze/BreezeMenuStyle.qml"
     dpkg-divert --package "$package_name" --rename --remove "/usr/lib/systemd/system/sddm.service"
 ;;
 esac

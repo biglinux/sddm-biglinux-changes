@@ -6,6 +6,8 @@ case "$1" in
   install)
     dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmscriptsXsetup" --rename "/usr/share/sddm/scripts/Xsetup"
     dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeSessionButton.qml" --rename "/usr/share/sddm/themes/breeze/SessionButton.qml"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeMain.qml" --rename "/usr/share/sddm/themes/breeze/Main.qml"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeBreezeMenuStyle.qml" --rename "/usr/share/sddm/themes/breeze/BreezeMenuStyle.qml"
     dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrlibsystemdsystemsddm.service" --rename "/usr/lib/systemd/system/sddm.service"
     ;;
   upgrade)
@@ -16,6 +18,14 @@ fi
 if [ "$(dpkg-divert --list "/usr/share/sddm/themes/breeze/SessionButton.qml")" = "" ]
 then
     dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeSessionButton.qml" --rename "/usr/share/sddm/themes/breeze/SessionButton.qml"
+fi
+if [ "$(dpkg-divert --list "/usr/share/sddm/themes/breeze/Main.qml")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeMain.qml" --rename "/usr/share/sddm/themes/breeze/Main.qml"
+fi
+if [ "$(dpkg-divert --list "/usr/share/sddm/themes/breeze/BreezeMenuStyle.qml")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sddm-biglinux-changes/usrsharesddmthemesbreezeBreezeMenuStyle.qml" --rename "/usr/share/sddm/themes/breeze/BreezeMenuStyle.qml"
 fi
 if [ "$(dpkg-divert --list "/usr/lib/systemd/system/sddm.service")" = "" ]
 then

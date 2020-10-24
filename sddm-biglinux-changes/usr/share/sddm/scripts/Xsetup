@@ -5,6 +5,11 @@
 # if in livecd change default login
 if [ -e "/lib/live/mount/medium" ]; then
     sed -i 's|Session=.*|Session=livecd|g' /etc/sddm.conf
+else
+
+    if [ "$(grep "usr/share/xsessions" /var/lib/sddm/state.conf)" = "" ]; then
+        sed -i 's|Session=|Session=/usr/share/xsessions/|g' /var/lib/sddm/state.conf
+    fi
 fi
 
 if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then

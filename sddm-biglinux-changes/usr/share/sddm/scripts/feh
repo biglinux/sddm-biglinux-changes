@@ -42,13 +42,15 @@ fi
 
 /usr/share/sddm/scripts/clock.sh
 
-quote="$(cat /tmp/biglinux_quote)"
 
 #Make a new image with quote
-convert "$background" -gravity Center -stroke black -strokewidth 1 -fill black -pointsize 50 -font Ubuntu -annotate 0 "$quote" -fill white -annotate +3-2 "$quote" /tmp/bootbg.jpg
+quote="$(cat /tmp/biglinux_quote)"
+convert "$background" -gravity Center -stroke black -strokewidth 1 -fill black -pointsize 50 -font Ubuntu -annotate 0 "$quote" -fill "#dddddd" -annotate +3-2 "$quote" /tmp/bootbg.jpg
 
 #Show image in screen
-feh --bg-scale "/tmp/bootbg.jpg" &
+feh --bg-scale --no-fehbg "/tmp/bootbg.jpg" &
+
+#feh --bg-fill --no-fehbg "$background" &
 
 #kill image app to not use more resources
 sleep 2

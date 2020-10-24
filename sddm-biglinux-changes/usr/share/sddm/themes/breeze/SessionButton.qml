@@ -34,7 +34,7 @@ PlasmaComponents.ToolButton {
 
     visible: menu.items.length > 1
 
-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "%1", instantiator.objectAt(currentIndex).text || "")
+    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Selecione o desktop: %1", instantiator.objectAt(currentIndex).text || "")
 
     Component.onCompleted: {
         currentIndex = sessionModel.lastIndex
@@ -42,6 +42,7 @@ PlasmaComponents.ToolButton {
 
     menu: QQC.Menu {
         id: menu
+        style: BreezeMenuStyle {}
         Instantiator {
             id: instantiator
             model: sessionModel
