@@ -33,3 +33,6 @@ IOSchedulingPriority=0
 Restart=always
 RestartSec=1s
 EnvironmentFile=-/etc/default/locale
+
+[Install]
+Alias=display-manager.service

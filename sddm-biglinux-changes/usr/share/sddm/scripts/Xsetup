@@ -12,9 +12,9 @@ else
     fi
 fi
 
-if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
-    /usr/local/bin/autorandr common
-fi
+# if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
+#     /usr/local/bin/autorandr common
+# fi
 
 if [ ! -e "/etc/disable_text_in_sddm" ]; then
     /usr/share/sddm/scripts/feh &
